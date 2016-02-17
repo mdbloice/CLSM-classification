@@ -155,7 +155,9 @@ np.savetxt('y_pred.txt', y_pred)
 # Plot a confusion matrix graphically 
 sns.set(font_scale=4.5) 
 fig, ax = plt.subplots(figsize=(30,20))
-ax = sns.heatmap(cm, annot=True, linewidths=2.5, square=True, linecolor="Green", cmap="Greens", yticklabels=target_names, xticklabels=target_names, vmin=0, vmax=900, fmt="d", annot_kws={"size": 50})
+ax = sns.heatmap(cm, annot=True, linewidths=2.5, square=True, linecolor="Green", 
+                    cmap="Greens", yticklabels=target_names, xticklabels=target_names, vmin=0, vmax=900, 
+                    fmt="d", annot_kws={"size": 50})
 ax.set(xlabel='Predicted label', ylabel='True label')
 
 # Get values for plotting:
