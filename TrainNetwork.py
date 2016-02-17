@@ -122,7 +122,8 @@ model.add(Activation('softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adadelta')
 
 # Start training. 
-history = model.fit(X_train, Y_train, batch_size=batch_size, nb_epoch=nb_epoch, show_accuracy=True, verbose=1, validation_data=(X_test, Y_test))
+history = model.fit(X_train, Y_train, batch_size=batch_size, nb_epoch=nb_epoch, show_accuracy=True, 
+                    verbose=1, validation_data=(X_test, Y_test))
 
 # Once finished, we can score our model and print the overall accuracy.
 score = model.evaluate(X_test, Y_test, show_accuracy=True, verbose=1)
@@ -172,7 +173,7 @@ ax1.set_ylabel('Accuracy', color='g')
 for tl in ax1.get_yticklabels():
     tl.set_color('g')
 ax2 = ax1.twinx()
-# Here we plot a point a 0,0, give it the label Accuracy and add the legend... it's a hack.
+# Here we plot a point at 0,0, give it the label Accuracy and add the legend... it's a hack to get 2 labels
 ax2.plot(0, 0, 'g-', label="Accuracy", linewidth=2.0)
 ax2.plot(loss, 'r-', linewidth=2.0, label="Loss")
 ax2.set_ylabel('Loss', color='r')
